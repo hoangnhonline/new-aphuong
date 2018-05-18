@@ -48,6 +48,8 @@
 		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js') }}"></script>
 		<script src="https://oss.maxcdn.com/libs/respond.{{ URL::asset('assets/js/1.4.2/respond.min.js') }}"></script>
 	<![endif]-->	
+</head>
+<body {{ \Request::route()->getName() == "home" ? 'class="page_home"' : "" }}>
 	<header id="header" class="header">
 	
 		<div class="header-logo">
