@@ -19,13 +19,11 @@ class UserController extends Controller
     */
     public function loginForm()
     {
-        /*User::create(array(
-            'full_name'     => 'Andy',            
-            'email'    => 'andy2016@gmail.com',
-            'password' => Hash::make('matkhaucuatui'),
-            'role' => 1,
-            'status' => 1
-        ));*/       
+        if(Auth::check()){
+            
+            return redirect()->route('product.index');           
+            
+        }      
         return view('backend.login');
     }
 
