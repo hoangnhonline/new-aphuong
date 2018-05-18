@@ -251,15 +251,42 @@
 						<div class="block-architectural">
 							<div class="col-sm-3 col-xs-12">								
 								<div class="block-contents">
+
+									<?php 
+									$bannerArr = DB::table('banner')->where(['object_id' => 6, 'object_type' => 3])->orderBy('display_order', 'asc')->get();
+									?>									
 									<div style="margin-bottom: 5px;">
-									<a href="">
-										<img src="{{ URL::asset('assets/images/da-ban.jpg')}}" class="img-responsive" alt="banner" width="100%">
+									<?php $i = 0; ?>
+									@foreach($bannerArr as $banner)
+									<?php $i++; ?>
+									    @if($banner->ads_url !='')
+									<a href="{{ $banner->ads_url }}">
+									@endif
+									        <img src="{{ Helper::showImage($banner->image_url) }}" alt="Banner tuyển dụng {{ $i }}" style="width:100%"></a>
+
+									     @if($banner->ads_url !='')
 									</a>
+									@endif
+
+									@endforeach
 									</div>
+									<?php 
+									$bannerArr = DB::table('banner')->where(['object_id' => 7, 'object_type' => 3])->orderBy('display_order', 'asc')->get();
+									?> 
 									<div>
-									<a href="">
-										<img src="{{ URL::asset('assets/images/chua-ban.jpg')}}" class="img-responsive" alt="banner" width="100%">
+									<?php $i = 0; ?>
+									@foreach($bannerArr as $banner)
+									<?php $i++; ?>
+									    @if($banner->ads_url !='')
+									<a href="{{ $banner->ads_url }}">
+									@endif
+									        <img src="{{ Helper::showImage($banner->image_url) }}" alt="Banner tuyển dụng {{ $i }}" style="width:100%"></a>
+
+									     @if($banner->ads_url !='')
 									</a>
+									@endif
+
+									@endforeach
 									</div>
 								</div>
 							</div>

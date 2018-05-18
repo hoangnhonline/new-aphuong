@@ -136,7 +136,7 @@
     </div>
 
 </article><!-- /block-inews -->
-          <?php 
+<?php 
 $bannerArr = DB::table('banner')->where(['object_id' => 3, 'object_type' => 3])->orderBy('display_order', 'asc')->get();
 ?>             
 <article class="block block-adv-full">
