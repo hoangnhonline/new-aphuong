@@ -159,11 +159,24 @@
 					</article><!-- /block-inews -->
 				</section>
 				<div class="clearfix"></div>
-				<section style="padding: 0 10px;margin: 10px 0" >
-					<a href="">
-						<img src="{{ URL::asset('assets/images/banner-1.jpg')}}" class="img-responsive" alt="banner" width="100%">
+				<?php 
+				$bannerArr = DB::table('banner')->where(['object_id' => 2, 'object_type' => 3])->orderBy('display_order', 'asc')->get();
+				?>	           
+	            <section style="padding: 0 10px;margin: 10px 0" >	
+	            <?php $i = 0; ?>
+				@foreach($bannerArr as $banner)
+					<?php $i++; ?>
+	                @if($banner->ads_url !='')
+					<a href="{{ $banner->ads_url }}">
+					@endif
+	                    <img src="{{ Helper::showImage($banner->image_url) }}" alt="Banner giữa trang {{ $i }}" style="width:100%"></a>
+
+	                 @if($banner->ads_url !='')
 					</a>
-				</section>
+					@endif
+
+	            @endforeach
+	            </section>
 				<section style="margin-bottom: 10px !important;">
 					<article class="block block-inews block-news-new">
 						<div class="block-advisory">
@@ -268,10 +281,7 @@
 
 	
 
-	@include('frontend.home.footer')
-	@if(\Request::route()->getName() != "du-an" && !isset($detailPage))
-	@include('frontend.partials.ads')	
-	@endif
+	@include('frontend.home.footer')	
     <style type="text/css">
     	#du-an-list .owl-dots {
     		display: none !important;

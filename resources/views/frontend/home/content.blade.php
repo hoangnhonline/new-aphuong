@@ -137,7 +137,7 @@
         
           </article><!-- /block-inews -->
           <?php 
-$bannerArr = DB::table('banner')->where(['object_id' => 5, 'object_type' => 3])->orderBy('display_order', 'asc')->get();
+$bannerArr = DB::table('banner')->where(['object_id' => 3, 'object_type' => 3])->orderBy('display_order', 'asc')->get();
 ?>             
 <article class="block block-adv-full">
 <?php $i = 0; ?>
@@ -146,7 +146,7 @@ $bannerArr = DB::table('banner')->where(['object_id' => 5, 'object_type' => 3])-
     @if($banner->ads_url !='')
 <a href="{{ $banner->ads_url }}">
 @endif
-        <img src="{{ URL::asset('assets/images/tuyen-dung.jpg') }}" alt="Banner qc {{ $i }}"></a>
+        <img src="{{ Helper::showImage($banner->image_url) }}" alt="Banner tuyển dụng {{ $i }}" style="width:100%"></a>
 
      @if($banner->ads_url !='')
 </a>
@@ -154,5 +154,5 @@ $bannerArr = DB::table('banner')->where(['object_id' => 5, 'object_type' => 3])-
 
 @endforeach
   </article>
-        </section>
+</section>
 @endsection
