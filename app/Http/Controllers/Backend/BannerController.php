@@ -37,11 +37,11 @@ class BannerController extends Controller
         
         if( $object_type == 3){
             if( $object_id == 1){
-                $detail->name = "Slide trang chủ";
+                $detail->name = "Hình ảnh - trang chủ";
             }elseif( $object_id == 2){
-                $detail->name = "Banner trượt bên trái";
+                $detail->name = "Banner trang chủ";
             }elseif( $object_id == 3){
-                $detail->name = "Banner trượt bên phải";
+                $detail->name = "Banner tuyển dụng";
             }elseif( $object_id == 4){
                 $detail->name = "Banner top ( cạnh logo )";
             }elseif($object_id == 5){
@@ -81,11 +81,11 @@ class BannerController extends Controller
         }
          if( $object_type == 3){
             if( $object_id == 1){
-                $detail->name = "Slide trang chủ";
+                $detail->name = "Hình ảnh - trang chủ";
             }elseif( $object_id == 2){
-                $detail->name = "Banner trượt bên trái";
+                $detail->name = "Banner trang chủ";
             }elseif( $object_id == 3){
-                $detail->name = "Banner trượt bên phải";
+                $detail->name = "Banner tuyển dụng";
             }elseif( $object_id == 4){
                 $detail->name = "Banner top ( cạnh logo )";
             }elseif($object_id == 5){

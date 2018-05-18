@@ -163,7 +163,7 @@
 					<article class="block block-inews block-news-new">
 						<div class="block-advisory">
 							<div class="col-sm-9 col-xs-12">
-								<article class="block block-news-new clearfix">
+								<article class="block block-news-new clearfix" id="du-an-list">
 								    <div class="col-sm-12 col-xs-12">      
 								        <div class="row">
 								          <ul class="nav nav-tabs" role="tablist">
@@ -194,27 +194,31 @@
 												</div>                      
 								              </div><!-- /home -->
 								              <div role="tabpanel" class="tab-pane" id="trmn2">
-									                <div  class="owl-carousel dotsData owl-style2" data-nav="false" data-margin="0" data-items='3' data-autoplayTimeout="500" data-autoplay="true" data-loop="true">
+									                <div  class="owl-carousel dotsData owl-style2" data-nav="false" data-margin="0" data-items='3' data-autoplayTimeout="500" data-autoplay="true" data-loop="false">
 													@if($landingList)
 														@foreach($landingList as $value)
+														@if($value->type == 1)
 														<div class="large-item" style="padding:10px">
 							                                <a href="{{ route('detail-project', [$value->slug])}}" title="{!! $value->name !!}"><img src="{{ $value->image_url ? Helper::showImageThumb($value->image_url, 3, '306x194') : URL::asset('backend/dist/img/no-image.jpg') }}" alt="" /></a>
 							                                <h4><a href="{{ route('detail-project', [$value->slug])}}" title="{!! $value->name !!}">{!! $value->name !!}</a></h4>
 							                                <p>{{ $value->address }}</p>
 							                            </div>
+							                            @endif
 							                            @endforeach
 							                        @endif
 													</div>         
 								              </div><!-- /profile -->
 								              <div role="tabpanel" class="tab-pane" id="trmn3">
-									                <div  class="owl-carousel dotsData owl-style2" data-nav="false" data-margin="0" data-items='3' data-autoplayTimeout="500" data-autoplay="true" data-loop="true">
+									                <div  class="owl-carousel dotsData owl-style2" data-nav="false" data-margin="0" data-items='3' data-autoplayTimeout="500" data-autoplay="true" data-loop="false">
 													@if($landingList)
 														@foreach($landingList as $value)
+														@if($value->type == 2)
 														<div class="large-item" style="padding:10px">
 							                                <a href="{{ route('detail-project', [$value->slug])}}" title="{!! $value->name !!}"><img src="{{ $value->image_url ? Helper::showImageThumb($value->image_url, 3, '306x194') : URL::asset('backend/dist/img/no-image.jpg') }}" alt="" /></a>
 							                                <h4><a href="{{ route('detail-project', [$value->slug])}}" title="{!! $value->name !!}">{!! $value->name !!}</a></h4>
 							                                <p>{{ $value->address }}</p>
 							                            </div>
+							                            @endif
 							                            @endforeach
 							                        @endif
 													</div>         
@@ -263,7 +267,11 @@
 	@if(\Request::route()->getName() != "du-an" && !isset($detailPage))
 	@include('frontend.partials.ads')	
 	@endif
-       
+    <style type="text/css">
+    	#du-an-list .owl-dots {
+    		display: none !important;
+    	}
+    </style>   
  	<!-- /.block-call -->
 	<a id="return-to-top" class="td-scroll-up" href="javascript:void(0)">
   		<i class="fa fa-angle-up" aria-hidden="true"></i>

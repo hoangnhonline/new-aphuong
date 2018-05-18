@@ -18,8 +18,9 @@ Route::get('/test', function() {
 Route::group(['namespace' => 'Frontend'], function()
 {
     Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
-    Route::get('/nha-dat-ban', ['as' => 'ban', 'uses' => 'ProductController@ban']);
-    Route::get('/nha-dat-cho-thue', ['as' => 'cho-thue', 'uses' => 'ProductController@choThue']);
+    Route::get('/du-an-dat-nen', ['as' => 'dat-nen', 'uses' => 'ProjectsController@datnen']);
+    Route::get('/du-an-can-ho', ['as' => 'can-ho', 'uses' => 'ProjectsController@canho']);
+    Route::get('/san-pham-le', ['as' => 'san-pham-le', 'uses' => 'ProductController@ban']);
     Route::post('/project-contact', ['as' => 'project-contact', 'uses' => 'ProjectsController@contact']);
     Route::get('/tin-tuc/dat-nen-long-an-mieng-moi-beo-bo-cua-gioi-dau-tu-p63.html', function(){ 
         return Redirect::to('/nha-dat-long-an.html', 301);         
@@ -30,7 +31,7 @@ Route::group(['namespace' => 'Frontend'], function()
     Route::post('/tmp-upload-multiple-fe', ['as' => 'image.tmp-upload-multiple-fe', 'uses' => 'UploadController@tmpUploadMultipleFE']);
    
     Route::get('tag/{slug}', ['as' => 'tag', 'uses' => 'DetailController@tagDetail']);
-    Route::get('tin-tuc/{slug}', ['as' => 'news-list', 'uses' => 'NewsController@newsList']);
+    Route::get('bai-viet/{slug}', ['as' => 'news-list', 'uses' => 'NewsController@newsList']);
     Route::get('{slug_type}/{slug}', ['as' => 'danh-muc-con', 'uses' => 'ProductController@cateChild']);
     Route::get('{slugLoaiSp}/{slug}-{id}.html', ['as' => 'chi-tiet', 'uses' => 'DetailController@index']);
     

@@ -86,18 +86,7 @@ class HomeController extends Controller
                     ->where('product_img.image_url', '<>', '')                                         
                     ->orderBy('product.is_hot', 'desc')
                     ->orderBy('product.cart_status', 'asc')                    
-                    ->orderBy('product.id', 'desc')->limit(5)->get();
-        $hotProduct2 = Product::where('product.slug', '<>', '')
-                    ->where('product.type', 2)
-                    ->where('product.status', 1)
-                    ->leftJoin('product_img', 'product_img.id', '=','product.thumbnail_id')            
-                    ->join('estate_type', 'estate_type.id', '=','product.estate_type_id')      
-                    ->select('product_img.image_url as image_urls', 'product.*', 'estate_type.slug as slug_loai')
-                    ->where('product_img.image_url', '<>', '')                                         
-                    ->orderBy('product.is_hot', 'desc')
-                    ->orderBy('product.cart_status', 'asc')                    
-                    ->orderBy('product.id', 'desc')                    
-                    ->limit(5)->get();
+                    ->orderBy('product.id', 'desc')->limit(5)->get();       
         
         $settingArr = Settings::whereRaw('1')->lists('value', 'name');
         $seo = $settingArr;
@@ -105,19 +94,12 @@ class HomeController extends Controller
         $seo['description'] = $settingArr['site_description'];
         $seo['keywords'] = $settingArr['site_keywords'];
         $socialImage = $settingArr['banner'];
-
-        $tinThiTruong = Articles::where('cate_id', 7)->orderBy('id', 'desc')->limit(6)->get()->toArray();
-        $phongthuy = Articles::where('cate_id', 4)->orderBy('id', 'desc')->limit(6)->get()->toArray();
         
         $khonggiansong = Articles::where('cate_id', 1)->orderBy('id', 'desc')->limit(6)->get()->toArray();
 
         $luat = Articles::where('cate_id', 5)->orderBy('id', 'desc')->limit(6)->get()->toArray();
-        $tuvan = Articles::where('cate_id', 6)->orderBy('id', 'desc')->limit(6)->get()->toArray();
-
-        $phantich = Articles::where('cate_id', 1)->orderBy('id', 'desc')->limit(6)->get()->toArray();
-        $videoList = Video::where('status', 1)->orderBy('display_order')->get();
-        $videoFirst = $videoList->first();     
-        return view('frontend.home.index', compact('bannerArr', 'articlesArr', 'socialImage', 'seo', 'countMess', 'hotProduct', 'tinThiTruong', 'luat', 'khonggiansong', 'phongthuy', 'tinRandom','hotProduct2', 'luat', 'tuvan', 'videoList', 'videoFirst'));
+             
+        return view('frontend.home.index', compact('bannerArr', 'articlesArr', 'socialImage', 'seo', 'hotProduct', 'luat', 'khonggiansong', 'tinRandom', 'luat'));
 
     }
 

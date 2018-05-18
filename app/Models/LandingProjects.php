@@ -37,7 +37,8 @@ class LandingProjects extends Model  {
                             'updated_user',
                             'meta_id',
                             'description',
-                            'status'
+                            'status',
+                            'type'
                             ];
    public static function getListTabProject($project_id){
         $query = ProjectTab::where('project_id', $project_id)

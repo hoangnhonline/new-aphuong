@@ -24,6 +24,7 @@ class LandingProjectsController extends Controller
     {
 
         $name = isset($request->name) && $request->name != '' ? $request->name : '';
+        $type = isset($request->type) && $request->type > 0 ? $request->type : 0;
         
         $query = LandingProjects::whereRaw('1');
 
@@ -32,12 +33,15 @@ class LandingProjectsController extends Controller
         if( Auth::user()->role == 1 ){
             $query->where('created_user', Auth::user()->id);
         }
+        if($type > 0){
+            $query->where('type', $type);
+        }
         if( $name != ''){
             $query->where('name', 'LIKE', '%'.$name.'%');
         }
         $items = $query->orderBy('id', 'desc')->paginate(20);
         
-        return view('backend.landing-projects.index', compact( 'items' , 'name' ));
+        return view('backend.landing-projects.index', compact( 'items' , 'name', 'type'));
     }
 
     /**
@@ -62,7 +66,8 @@ class LandingProjectsController extends Controller
         $dataArr = $request->all();
         
         $this->validate($request,[                        
-            'name' => 'required',            
+            'type' => 'required',
+            'name' => 'required',
             'slug' => 'required|unique:articles,slug',
         ],
         [         
@@ -222,7 +227,8 @@ class LandingProjectsController extends Controller
     {
         $dataArr = $request->all();
         
-        $this->validate($request,[                       
+        $this->validate($request,[    
+            'type' => 'required',                   
             'name' => 'required',            
             'slug' => 'required|unique:articles,slug,'.$dataArr['id'],
         ],

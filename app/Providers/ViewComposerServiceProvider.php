@@ -67,7 +67,7 @@ class ViewComposerServiceProvider extends ServiceProvider
 	        	$tinRandom = $tinRandom->limit(5)->get();
 	        }
 	        $customLink = CustomLink::where('block_id', 1)->orderBy('display_order', 'asc')->get();
-	        $landingList = LandingProjects::where('is_hot', 1)->orderBy('id', 'desc')->offset(0)->limit(2)->get();
+	        $landingList = LandingProjects::orderBy('id', 'desc')->offset(0)->limit(10)->get();
 	        $landing2List = LandingProjects::where('is_hot', 1)->orderBy('id', 'desc')->offset(2)->limit(5)->get();
 	        $priceList = Price::where('type', 1)->get();
         	$areaList = Area::all();

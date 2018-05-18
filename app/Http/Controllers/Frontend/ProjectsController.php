@@ -34,6 +34,24 @@ class ProjectsController extends Controller
         $socialImage = "";
         return view('frontend.projects.index', compact('seo', 'socialImage', 'projectList'));
     }
+    public function canho(Request $request)
+    {   
+        
+        $projectList = LandingProjects::where('type', 1)->orderBy('id', 'desc')->get();
+        $seo['title'] = $seo['description'] = $seo['keywords'] = "Dự án căn hộ";                
+        
+        $socialImage = "";
+        return view('frontend.projects.index', compact('seo', 'socialImage', 'projectList'));
+    }
+    public function datnen(Request $request)
+    {   
+        
+        $projectList = LandingProjects::where('type', 2)->orderBy('id', 'desc')->get();
+        $seo['title'] = $seo['description'] = $seo['keywords'] = "Dự án đất nền";                
+        
+        $socialImage = "";
+        return view('frontend.projects.index', compact('seo', 'socialImage', 'projectList'));
+    }
     public function contact(Request $request){
         $dataArr = $request->all();
         $this->validate($request,[

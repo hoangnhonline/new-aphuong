@@ -5,33 +5,27 @@
     </div>
     <ul class="nav navbar-nav navbar-left">
         <li class="level0 {{ \Request::route()->getName() == "home" ? "active" : "" }}"><a class="" href="{{ route('home') }}">Trang chủ</a></li><!-- END MENU HOME -->
-        <li class="level0 parent {{ (in_array(\Request::route()->getName(), ['ban', 'danh-muc', 'chi-tiet']) && isset($type) && $type == 1) ? "active" : "" }}">
-            <a href="{{ route('ban') }}">BĐS bán</a>
-            <ul class="level0 submenu">
-                @foreach($banList as $ban)
-                <li class="level1"><a href="{{ route('danh-muc', $ban->slug ) }}">{!! $ban->name !!}</a></li>                         
-                @endforeach
-            </ul>
+        <li class="level0">
+            <a href="{{ route('dat-nen') }}">Đất nền</a>            
         </li><!-- END MENU SHOP -->
-        <li class="level0 {{ (in_array(\Request::route()->getName(), ['cho-thue', 'danh-muc', 'chi-tiet']) && isset($type) && $type == 2) ? "active" : "" }}"><a href="{{ route('cho-thue') }}">BĐS cho thuê</a>
+        <li class="level0">
+            <a href="{{ route('can-ho') }}">Căn hộ</a>            
+        </li><!-- END MENU SHOP -->
+        <li class="level0 {{ (in_array(\Request::route()->getName(), ['cho-thue', 'danh-muc', 'chi-tiet']) && isset($type) && $type == 2) ? "active" : "" }}"><a href="{{ route('san-pham-le') }}">Sản phẩm lẻ</a>
             <ul class="level0 submenu">
-                @foreach($thueList as $thue)
+                @foreach($banList as $thue)
                 <li class="level1"><a href="{{ route('danh-muc', $thue->slug ) }}">{!! $thue->name !!}</a></li>                           
                 @endforeach
             </ul>
         </li><!-- END MENU BLOG -->
-        <li class="level0 {{ in_array(\Request::route()->getName(), ['du-an', 'detail-project', 'tab']) ? "active" : "" }}"><a href="{{ route('du-an') }}">Dự án</a></li>
-        @foreach($menuList as $value)
-            @if($value->type == 1)
-                <li class="level0 {{ (isset($cateDetail) && $cateDetail->id == $value->object_id) ? "active" : "" }}"><a href="{{ route('news-list', $value->slug) }}">{!! $value->title !!}</a></li>
-            @elseif($value->type == 2)
-                <li class="level0 {{ (isset($detailPage) && $detailPage->id == $value->object_id) ? "active" : "" }}"><a href="{{ route('danh-muc', $value->slug) }}">{!! $value->title !!}</a></li>
-            @elseif($value->type == 3)
-                <li class="level0"><a href="{{ $value->url }}">{!! $value->title !!}</a></li>
-            @endif
-
-        @endforeach
-        
-        <li class="level0 postnew {{ (in_array(\Request::route()->getName(), ['ky-gui-thanh-cong', 'ky-gui'])) ? "active" : "" }}"><a href="{{ route('ky-gui') }}"><img src="{{ URL::asset('assets/images/icon-postnews.png') }}" alt="Ký gửi"> Ký gửi</a></li>
+        <li class="level0">
+            <a href="{{ route('news-list', 'tin-tuc') }}">Tin tức</a>            
+        </li><!-- END MENU SHOP -->
+        <li class="level0">
+            <a href="{{ route('news-list', 'tuyen-dung') }}">Tuyển dụng</a>            
+        </li><!-- END MENU SHOP -->
+        <li class="level0">
+            <a href="{{ route('news-list', 'van-ban') }}">Văn bản</a>            
+        </li><!-- END MENU SHOP -->                
     </ul>
 </div><!-- /.navbar-collapse -->

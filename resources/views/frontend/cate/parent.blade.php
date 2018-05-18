@@ -7,7 +7,7 @@
 		<li><a href="{{ route('home') }}" title="Trở về trang chủ">Trang chủ</a></li>
 		<li>
 			@if($rs->type == 1)			
-			<a href="{{ route('ban') }}">BĐS Bán</a>
+			<a href="{{ route('san-pham-le') }}">Sản phẩm lẻ</a>
 			@else
 			<a href="{{ route('cho-thue') }}">BĐS Cho thuê</a>
 			@endif

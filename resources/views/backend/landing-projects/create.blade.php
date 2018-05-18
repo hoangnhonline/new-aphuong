@@ -38,7 +38,15 @@
                           @endforeach
                       </ul>
                   </div>
-              @endif                     
+              @endif    
+                <div class="form-group" >                  
+                  <label>Loại dự án <span class="red-star">*</span></label>
+                  <select class="form-control" name="type">
+                    <option value="">-Chọn-</option>
+                    <option value="1" {{ old('type') == 1 ? "selected" : "" }}>Căn hộ</option>
+                    <option value="2" {{ old('type') == 2 ? "selected" : "" }}>Đất nền</option>
+                  </select>
+                </div>                 
                 <div class="form-group" >                  
                   <label>Tên <span class="red-star">*</span></label>
                   <input type="text" class="form-control" name="name" id="name" value="{{ old('name') }}">
