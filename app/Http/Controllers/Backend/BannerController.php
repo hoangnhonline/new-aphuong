@@ -39,7 +39,7 @@ class BannerController extends Controller
             if( $object_id == 1){
                 $detail->name = "Hình ảnh - trang chủ";
             }elseif( $object_id == 2){
-                $detail->name = "Banner trang chủ";
+                $detail->name = "Banner giữa trang";
             }elseif( $object_id == 3){
                 $detail->name = "Banner tuyển dụng";
             }elseif( $object_id == 4){
@@ -83,7 +83,7 @@ class BannerController extends Controller
             if( $object_id == 1){
                 $detail->name = "Hình ảnh - trang chủ";
             }elseif( $object_id == 2){
-                $detail->name = "Banner trang chủ";
+                $detail->name = "Banner giữa trang";
             }elseif( $object_id == 3){
                 $detail->name = "Banner tuyển dụng";
             }elseif( $object_id == 4){
