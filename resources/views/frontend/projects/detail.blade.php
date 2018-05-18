@@ -292,7 +292,7 @@
 </div><!-- /block-langding -->
 </section><!-- /block-main -->
 @endsection
-@include('frontend.home.slider')
+
 @section('javascript_page')
 <script type="text/javascript">
 	$(document).ready(function(){
