@@ -108,11 +108,7 @@
 								<div class="block-title block-title-common">
 									<h3><span class="icon-tile"><i class="fa fa-star"></i></span> GIỚI THIỆU</h3>
 								</div>
-								<div class="block-content">
-									
-										Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-									
-								</div>
+								<div class="block-content">{!! $settingArr['gioi_thieu_so_luoc'] !!}</div>
 							</div>
 						</div>
 						<div class="block-architectural">
