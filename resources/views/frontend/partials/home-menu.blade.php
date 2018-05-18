@@ -18,13 +18,13 @@
                 @endforeach
             </ul>
         </li><!-- END MENU BLOG -->
-        <li class="level0">
+        <li class="level0 {{ isset($slug) && \Request::route()->getName() == "news-list" && $slug == "tin-tuc" ? "active" : "" }}">
             <a href="{{ route('news-list', 'tin-tuc') }}">Tin tức</a>            
         </li><!-- END MENU SHOP -->
-        <li class="level0">
+        <li class="level0 {{ isset($slug) && \Request::route()->getName() == "news-list" && $slug == "tuyen-dung" ? "active" : "" }}">
             <a href="{{ route('news-list', 'tuyen-dung') }}">Tuyển dụng</a>            
         </li><!-- END MENU SHOP -->
-        <li class="level0">
+        <li class="level0 {{ isset($slug) && \Request::route()->getName() == "news-list" && $slug == "van-ban" ? "active" : "" }}">
             <a href="{{ route('news-list', 'van-ban') }}">Văn bản</a>            
         </li><!-- END MENU SHOP -->                
     </ul>

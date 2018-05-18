@@ -28,7 +28,7 @@ class NewsController extends Controller
         $seo['description'] = $cateDetail->meta_description ? $cateDetail->meta_description : $cateDetail->title;
         $seo['keywords'] = $cateDetail->meta_keywords ? $cateDetail->meta_keywords : $cateDetail->title;
         $socialImage = $cateDetail->image_url;       
-        return view('frontend.news.index', compact('title', 'hotArr', 'articlesArr', 'cateDetail', 'seo', 'socialImage'));
+        return view('frontend.news.index', compact('title', 'hotArr', 'articlesArr', 'cateDetail', 'seo', 'socialImage', 'slug'));
     }      
 
      public function newsDetail(Request $request)
