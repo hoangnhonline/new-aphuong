@@ -5,13 +5,13 @@
     </div>
     <ul class="nav navbar-nav navbar-left">
         <li class="level0 {{ \Request::route()->getName() == "home" ? "active" : "" }}"><a class="" href="{{ route('home') }}">Trang chủ</a></li><!-- END MENU HOME -->
-        <li class="level0">
+        <li class="level0 {{ \Request::route()->getName() == "dat-nen" ? "active" : "" }}">
             <a href="{{ route('dat-nen') }}">Đất nền</a>            
         </li><!-- END MENU SHOP -->
-        <li class="level0">
+        <li class="level0 {{ \Request::route()->getName() == "can-ho" ? "active" : "" }}">
             <a href="{{ route('can-ho') }}">Căn hộ</a>            
         </li><!-- END MENU SHOP -->
-        <li class="level0 {{ (in_array(\Request::route()->getName(), ['cho-thue', 'danh-muc', 'chi-tiet']) && isset($type) && $type == 2) ? "active" : "" }}"><a href="{{ route('san-pham-le') }}">Sản phẩm lẻ</a>
+        <li class="level0 {{ (in_array(\Request::route()->getName(), ['san-pham-le', 'danh-muc', 'chi-tiet']) && isset($type) && $type == 1) ? "active" : "" }}"><a href="{{ route('san-pham-le') }}">Sản phẩm lẻ</a>
             <ul class="level0 submenu">
                 @foreach($banList as $thue)
                 <li class="level1"><a href="{{ route('danh-muc', $thue->slug ) }}">{!! $thue->name !!}</a></li>                           

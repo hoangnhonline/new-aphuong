@@ -27,8 +27,7 @@
 		</div>
 		@endif
 		<div class="clearfix"></div>
-		<div class="block-searchresult">
-			<h2>Tìm kiếm theo các tiêu chí: <b style="color: #37a344;">{!! $rs->name !!}</b></h2>
+		<div class="block-searchresult">			
 			<span class="block-countresult">Có <b>{{ number_format(count($productList)) }}</b> bất động sản</span>
 		</div>
 		<div class="col-sm-12 col-xs-12">

@@ -12,16 +12,12 @@
 <article class="block block-project-search">
 	<div class="block-title-common">
 		<h3><span class="icon-tile"><i class="fa fa-search"></i></span>{!! $title !!}</h3>
-	</div>
-	<!--<div class="block-contents">
-		
-	</div>-->
+	</div>	
 </article><!-- /block-project-search -->
 
 <article class="block block-project">
-	<!--<div class="block-cate-title"><h1>TẤT CẢ DỰ ÁN</h1></div>-->
+	
 	<div class="block-searchresult">
-		<!--<h2>Tìm kiếm theo các tiêu chí: <b style="color: #37a344;"> Tất cả dự án khu dân cư tại Quận 3</b>. Tỉnh/Tp: Hồ Chí Minh. Quận/Huyện: Quận 3</h2>-->
 		<span class="block-countresult">Có <b>{{ $projectList->count()}}</b> dự án</span>
 	</div>
 	<div class="row">

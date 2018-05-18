@@ -76,7 +76,7 @@ class ProductController extends Controller
             $productArr = $productList->toArray();
             
             
-            $name = $seo['title'] = $seo['description'] = $seo['keywords'] = 'Nhà đất bán';
+            $name = $seo['title'] = $seo['description'] = $seo['keywords'] = 'Sản phẩm lẻ';
              $type = 1;
              $seo['custom_text'] = "";
             return view('frontend.cate.type', compact('productList','productArr', 'socialImage', 'seo', 'name', 'type'));
