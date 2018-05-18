@@ -62,80 +62,80 @@
   </article><!-- /block-news-new -->
 </section>
 <section style="margin-bottom: 10px !important;">
-          <article class="block block-fengshui block-news-new">
-           
-              <div class="col-sm-6 col-xs-12" style="padding: 5px">
-               
-                  
-                    <div class="block-title block-title-common">
-                      <h3><span class="icon-tile2"><img src="{{ URL::asset('assets/images/icon-living.png') }}" alt="Tin tức"> Tin tức</h3>
-                    </div>
-                    <div class="block-contents">
-
-                      <div class="news-fengshui clearfix">
-                       @if(isset($khonggiansong[0]))
-                        <div class="fengshui-news-hot">
-                                <a href="{{ route('news-detail', ['slug' => $khonggiansong[0]['slug'], 'id' => $khonggiansong[0]['id']]) }}" title="">
-                            <img src="{{ $khonggiansong[0]['image_url'] ? Helper::showImageThumb($khonggiansong[0]['image_url'], 2, '325x200') : URL::asset('backend/dist/img/no-image.jpg') }}" alt="{!! $khonggiansong[0]['title'] !!}">
-                          </a>    
-                                
-                                <h4><a href="{{ route('news-detail', ['slug' => $khonggiansong[0]['slug'], 'id' => $khonggiansong[0]['id']]) }}" title="{!! $khonggiansong[0]['title'] !!}" >{!! $khonggiansong[0]['title'] !!}</a></h4>
-                            </div>
-                            @endif
-                            <div class="fengshui-news-list">
-                              <ul>
-                                 <?php $i =0; ?>
-                                  @foreach($khonggiansong as $tin)
-                                  <?php $i++; 
-                                  ?>
-                                  @if($i > 1)
-                                  <li><a href="{{ route('news-detail', ['slug' => $tin['slug'], 'id' => $tin['id']]) }}" title="{!! $tin['title'] !!}">{!! $tin['title'] !!}</a></li>
-                                  @endif
-                                  @endforeach
-                              </ul>
-                            </div>
-                      </div>
-                    </div>
-             
-      
-              </div>
-            
-            
-              <div class="col-sm-6 col-xs-12" style="padding: 5px">
-                
-                <div class="block-title block-title-common">
-                  <h3><span class="icon-tile2"><img src="{{ URL::asset('assets/images/icon-tkkt.png') }}" alt="Tư vấn thiết kế"> Văn bản</h3>
-                </div>
-                <div class="block-contents">
-
-                  <div class="news-fengshui clearfix">
-                   @if(isset($luat[0]))
-                    <div class="fengshui-news-hot">
-                            <a href="{{ route('news-detail', ['slug' => $luat[0]['slug'], 'id' => $luat[0]['id']]) }}" title="{!! $luat[0]['title'] !!}">
-                        <img src="{{ $luat[0]['image_url'] ? Helper::showImageThumb($luat[0]['image_url'], 2, '325x200') : URL::asset('backend/dist/img/no-image.jpg') }}" alt="{!! $luat[0]['title'] !!}">
-                      </a>    
-                            
-                            <h4><a href="{{ route('news-detail', ['slug' => $luat[0]['slug'], 'id' => $luat[0]['id']]) }}" title="{!! $luat[0]['title'] !!}">{!! $luat[0]['title'] !!}</a></h4>
-                        </div>
-                        @endif
-                        <div class="fengshui-news-list">
-                          <ul>
-                             <?php $i =0; ?>
-                              @foreach($luat as $tin)
-                              <?php $i++; 
-                              ?>
-                              @if($i > 1)
-                              <li><a href="{{ route('news-detail', ['slug' => $tin['slug'], 'id' => $tin['id']]) }}" title="{!! $tin['title'] !!}">{!! $tin['title'] !!}</a></li>
-                              @endif
-                              @endforeach
-                          </ul>
-                        </div>
-                  </div>
-                </div>
-           
-              </div>
+<article class="block block-fengshui block-news-new">
+ 
+    <div class="col-sm-6 col-xs-12" style="padding: 5px">
+     
         
-          </article><!-- /block-inews -->
+          <div class="block-title block-title-common">
+            <h3><span class="icon-tile2"><img src="{{ URL::asset('assets/images/icon-living.png') }}" alt="Tin tức"> Tin tức</h3>
+          </div>
+          <div class="block-contents">
+
+            <div class="news-fengshui clearfix">
+             @if(isset($khonggiansong[0]))
+              <div class="fengshui-news-hot">
+                      <a href="{{ route('news-detail', ['slug' => $khonggiansong[0]['slug'], 'id' => $khonggiansong[0]['id']]) }}" title="">
+                  <img src="{{ $khonggiansong[0]['image_url'] ? Helper::showImageThumb($khonggiansong[0]['image_url'], 2, '325x200') : URL::asset('backend/dist/img/no-image.jpg') }}" alt="{!! $khonggiansong[0]['title'] !!}">
+                </a>    
+                      
+                      <h4><a href="{{ route('news-detail', ['slug' => $khonggiansong[0]['slug'], 'id' => $khonggiansong[0]['id']]) }}" title="{!! $khonggiansong[0]['title'] !!}" >{!! $khonggiansong[0]['title'] !!}</a></h4>
+                  </div>
+                  @endif
+                  <div class="fengshui-news-list">
+                    <ul>
+                       <?php $i =0; ?>
+                        @foreach($khonggiansong as $tin)
+                        <?php $i++; 
+                        ?>
+                        @if($i > 1)
+                        <li><a href="{{ route('news-detail', ['slug' => $tin['slug'], 'id' => $tin['id']]) }}" title="{!! $tin['title'] !!}">{!! $tin['title'] !!}</a></li>
+                        @endif
+                        @endforeach
+                    </ul>
+                  </div>
+            </div>
+          </div>
+   
+
+    </div>
+  
+  
+    <div class="col-sm-6 col-xs-12" style="padding: 5px">
+      
+      <div class="block-title block-title-common">
+        <h3><span class="icon-tile2"><img src="{{ URL::asset('assets/images/icon-tkkt.png') }}" alt="Tư vấn thiết kế"> Văn bản</h3>
+      </div>
+      <div class="block-contents">
+
+        <div class="news-fengshui clearfix">
+         @if(isset($luat[0]))
+          <div class="fengshui-news-hot">
+                  <a href="{{ route('news-detail', ['slug' => $luat[0]['slug'], 'id' => $luat[0]['id']]) }}" title="{!! $luat[0]['title'] !!}">
+              <img src="{{ $luat[0]['image_url'] ? Helper::showImageThumb($luat[0]['image_url'], 2, '325x200') : URL::asset('backend/dist/img/no-image.jpg') }}" alt="{!! $luat[0]['title'] !!}">
+            </a>    
+                  
+                  <h4><a href="{{ route('news-detail', ['slug' => $luat[0]['slug'], 'id' => $luat[0]['id']]) }}" title="{!! $luat[0]['title'] !!}">{!! $luat[0]['title'] !!}</a></h4>
+              </div>
+              @endif
+              <div class="fengshui-news-list">
+                <ul>
+                   <?php $i =0; ?>
+                    @foreach($luat as $tin)
+                    <?php $i++; 
+                    ?>
+                    @if($i > 1)
+                    <li><a href="{{ route('news-detail', ['slug' => $tin['slug'], 'id' => $tin['id']]) }}" title="{!! $tin['title'] !!}">{!! $tin['title'] !!}</a></li>
+                    @endif
+                    @endforeach
+                </ul>
+              </div>
+        </div>
+      </div>
+ 
+    </div>
+
+</article><!-- /block-inews -->
           <?php 
 $bannerArr = DB::table('banner')->where(['object_id' => 3, 'object_type' => 3])->orderBy('display_order', 'asc')->get();
 ?>             
