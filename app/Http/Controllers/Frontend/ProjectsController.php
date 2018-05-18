@@ -32,7 +32,8 @@ class ProjectsController extends Controller
         $seo['title'] = $seo['description'] = $seo['keywords'] = "Dự án";                
         
         $socialImage = "";
-        return view('frontend.projects.index', compact('seo', 'socialImage', 'projectList'));
+        $title = "Dự án";
+        return view('frontend.projects.index', compact('title', 'seo', 'socialImage', 'projectList'));
     }
     public function canho(Request $request)
     {   
@@ -41,7 +42,28 @@ class ProjectsController extends Controller
         $seo['title'] = $seo['description'] = $seo['keywords'] = "Dự án căn hộ";                
         
         $socialImage = "";
-        return view('frontend.projects.index', compact('seo', 'socialImage', 'projectList'));
+        $title = "Căn hộ";
+        return view('frontend.projects.index', compact('title', 'seo', 'socialImage', 'projectList'));
+    }
+    public function dangban(Request $request)
+    {   
+        
+        $projectList = LandingProjects::where('status', 1)->orderBy('id', 'desc')->get();
+        $seo['title'] = $seo['description'] = $seo['keywords'] = "Dự án căn hộ";                
+        
+        $socialImage = "";
+        $title = "Dự án đang bán";
+        return view('frontend.projects.index', compact('title', 'seo', 'socialImage', 'projectList'));
+    }
+    public function daban(Request $request)
+    {   
+        
+        $projectList = LandingProjects::where('status', 2)->orderBy('id', 'desc')->get();
+        $seo['title'] = $seo['description'] = $seo['keywords'] = "Dự án căn hộ";                
+        
+        $socialImage = "";
+        $title = "Dự án đã bán";
+        return view('frontend.projects.index', compact('title', 'seo', 'socialImage', 'projectList'));
     }
     public function datnen(Request $request)
     {   
@@ -50,7 +72,8 @@ class ProjectsController extends Controller
         $seo['title'] = $seo['description'] = $seo['keywords'] = "Dự án đất nền";                
         
         $socialImage = "";
-        return view('frontend.projects.index', compact('seo', 'socialImage', 'projectList'));
+        $title = "Đất nền";
+        return view('frontend.projects.index', compact('title', 'seo', 'socialImage', 'projectList'));
     }
     public function contact(Request $request){
         $dataArr = $request->all();

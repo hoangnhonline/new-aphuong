@@ -20,6 +20,10 @@ Route::group(['namespace' => 'Frontend'], function()
     Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
     Route::get('/du-an-dat-nen', ['as' => 'dat-nen', 'uses' => 'ProjectsController@datnen']);
     Route::get('/du-an-can-ho', ['as' => 'can-ho', 'uses' => 'ProjectsController@canho']);
+
+    Route::get('/du-an-dang-ban', ['as' => 'dang-ban', 'uses' => 'ProjectsController@dangban']);
+    Route::get('/du-an-da-ban', ['as' => 'da-ban', 'uses' => 'ProjectsController@daban']);
+
     Route::get('/san-pham-le', ['as' => 'san-pham-le', 'uses' => 'ProductController@ban']);
     Route::post('/project-contact', ['as' => 'project-contact', 'uses' => 'ProjectsController@contact']);
     Route::get('/tin-tuc/dat-nen-long-an-mieng-moi-beo-bo-cua-gioi-dau-tu-p63.html', function(){ 

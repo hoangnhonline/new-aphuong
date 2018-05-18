@@ -12,7 +12,7 @@
 			<li class="active">{!! $detail->name !!}</li>
 		</ul>
 	</article>
-<iframe src="https://vnad.vgame.us:8043/embed/5a5d86b92e38a4650826346c" style="display: none;"></iframe>
+
 	<div class="block block-title">		  
 		<ul class="nav nav-tabs nav-tabs-langding" id="nav-tabs-langding" role="tablist">
 			<li role="presentation" class="tabs_logo" >
