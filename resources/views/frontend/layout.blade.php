@@ -91,6 +91,9 @@
 			@include('frontend.partials.home-menu')
         </div>
 	</nav><!-- /navigation -->
+	@if( \Request::route()->getName() == 'home')	
+	@include('frontend.home.slider')
+	@endif
 	<section class="main" id="site-main">
 		<section class="container">
 			

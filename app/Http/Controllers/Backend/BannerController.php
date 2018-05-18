@@ -45,7 +45,7 @@ class BannerController extends Controller
             }elseif( $object_id == 4){
                 $detail->name = "Banner top ( cạnh logo )";
             }elseif($object_id == 5){
-                $detail->name = "Banner giữa trang";
+                $detail->name = "Slider - trang chủ";
             }
         }
         if($object_type == 4){
@@ -89,8 +89,8 @@ class BannerController extends Controller
             }elseif( $object_id == 4){
                 $detail->name = "Banner top ( cạnh logo )";
             }elseif($object_id == 5){
-                $detail->name = "Banner giữa trang";
-            }         
+                $detail->name = "Slider - trang chủ";
+            }        
         }
         if($object_type == 4){
             $detail = LandingProjects::find($object_id);

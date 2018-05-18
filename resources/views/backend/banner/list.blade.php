@@ -36,7 +36,13 @@
               <th width="1%;white-space:nowrap">Thao tác</th>
             </tr>
             <tbody>
-           
+              <tr>
+                <td><span class="order">1</span></td>                                                                           
+                <td><a href="{{ route( 'banner.index', [ 'object_id' => 5, 'object_type' => 3 ]) }}" class="link_edit">Slide - trang chủ</a></td>
+                <td style="white-space:nowrap; text-align:right">                 
+                  <a href="{{ route( 'banner.index', [ 'object_id' => 5, 'object_type' => 3 ]) }}" class="btn-sm btn btn-primary">Banner</a>
+                </td>
+              </tr> 
               <tr>
                 <td><span class="order">1</span></td>                                                                           
                 <td><a href="{{ route( 'banner.index', [ 'object_id' => 1, 'object_type' => 3 ]) }}" class="link_edit">Hình ảnh - trang chủ</a></td>
