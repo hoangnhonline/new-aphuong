@@ -94,7 +94,9 @@
         </div>
 	</nav><!-- /navigation -->
 	@if( \Request::route()->getName() == 'home')	
-	@include('frontend.home.slider')
+	<section class="container" style="margin-top:5px;">
+	@include('frontend.home.slider')	
+	</section>	
 	@endif
 	<section class="main" id="site-main">
 		<section class="container">

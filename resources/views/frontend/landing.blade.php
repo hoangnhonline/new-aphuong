@@ -47,27 +47,7 @@
 <body>
 	
 	<header id="header" class="header">
-		<!-- <div class="header-register">
-			<div class="container">
-				<div class="logon">
-		            <a href="/dang-nhap.htm" rel="nofollow" title="Đăng nhập">
-		                <span>Đăng nhập</span>
-		            </a>
-		        </div>
-		        <div class="register">
-		            <a href="/dang-ky.htm" rel="nofollow" title="Đăng ký">
-		                <span>Đăng ký</span>
-		            </a>
-		        </div>
-		        <div id="pnBxh">
-	          		<div class="bxh">
-		                <a href="#" rel="nofollow" title="Banxehoi.com" target="_blank">
-		                    <span>Banxehoi.com</span>
-		                </a>
-		            </div>
-				</div>
-			</div>
-		</div> -->
+		
 		<div class="header-logo">
 	        <div class="container">
 	            <div class="logo">
@@ -109,16 +89,12 @@
 			@include('frontend.partials.home-menu')
         </div>
 	</nav><!-- /navigation -->
+	<section class="container" style="margin-top:5px;">
 	@include('frontend.home.slider')
+	</section>
 	@yield('content')	
 
 	@include('frontend.home.footer')	
-	<div class="ppocta-ft-fix">
-	<div id="messengerButton"> <a href="http://fb.com/msg/thanhphuthinh" target="_blank" onclick="_gaq.push(['_trackEvent', 'Call To Action', 'Messenger Button', 'Mobile']);"><i></i></a></div>
-	<div id="zaloButton"> <a href="http://zalo.me/0911035679" target="_blank" onclick="_gaq.push(['_trackEvent', 'Call To Action', 'Zalo Button', 'Mobile']);"><i></i></a></div>
-	<div id="callNowButton"> <a href="tel:0919356178" onclick="_gaq.push(['_trackEvent', 'Call To Action', 'Call Button', 'Mobile']);"><i></i></a></div>
-</div><!-- /.block-call -->
-	
 
 <a id="return-to-top" class="td-scroll-up" href="javascript:void(0)">
   		<i class="fa fa-angle-up" aria-hidden="true"></i>
