@@ -116,14 +116,17 @@ class ProjectsController extends Controller
         $detail = LandingProjects::where('slug', $slug)->first();
         $project_id = $detail->id;
         $tabList = LandingProjects::getListTabProject($project_id); 
-        $tabArr = [];
+        //dd($tabList);
+        $tabArr = $articlesDetail = [];
         $i = 0;
+
         foreach($tabList as $tmp) {
             if($i == 0){
                 $tab_id = $tmp->id;
             }
             $tabArr[] = $tmp->id;
-            $i++;
+            $i++;            
+            $articlesDetail[$tmp->id] = Articles::where('project_id', $project_id)->where('tab_id', $tmp->id)->first();
         }
         $detailTab = Articles::where('project_id', $project_id)->where('tab_id', $tab_id)->first();
            
@@ -146,7 +149,7 @@ class ProjectsController extends Controller
             }
         }
 		
-        return view('frontend.projects.detail', compact('seo', 'socialImage', 'detail', 'tabList', 'tabArr', 'detailTab', 'project_id', 'tab_id', 'tabSelected'));
+        return view('frontend.projects.detail', compact('seo', 'socialImage', 'detail', 'tabList', 'tabArr', 'detailTab', 'project_id', 'tab_id', 'tabSelected', 'articlesDetail'));
     }
     public function tab(Request $request){
 
