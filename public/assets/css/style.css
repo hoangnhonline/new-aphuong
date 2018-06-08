@@ -266,6 +266,7 @@ img {
     text-decoration: none;
     font-size: 15px;
     text-align: center;
+    text-transform: uppercase;
 }
 .menu .navbar-nav .submenu {
     background-color: #fbfbfb;
