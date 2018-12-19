@@ -23,7 +23,7 @@
     <meta property="og:title" content="@yield('title')" />
     <meta property="og:description" content="@yield('site_description')" />
     <meta property="og:url" content="{{ url()->current() }}" />
-    <meta property="og:site_name" content="thanhphuthinhland.vn" />
+    <meta property="og:site_name" content="phucankhangland.com" />
     <?php $socialImage = isset($socialImage) ? $socialImage : $settingArr['banner']; ?>
     <meta property="og:image" content="{{ Helper::showImage($socialImage) }}" />
     <meta name="csrf-token" content="{{ csrf_token() }}" />
@@ -31,17 +31,18 @@
     <meta name="twitter:description" content="@yield('site_description')" />
     <meta name="twitter:title" content="@yield('title')" />        
     <meta name="twitter:image" content="{{ Helper::showImage($socialImage) }}" />
+   <script src="//ajax.microsoft.com/ajax/jquery/jquery-1.3.2.min.js" type="text/javascript"></script>
 	<!-- ===== Style CSS Common ===== -->
-	<link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/css/style.css') }}">
+	<link rel="stylesheet" type="text/css" href="http://phucankhangland.com/assets/css/style.css">
 	<!-- ===== Responsive CSS ===== -->
-    <link href="{{ URL::asset('assets/css/responsive.css') }}" rel="stylesheet">
+    <link href="http://phucankhangland.com/assets/css/responsive.css" rel="stylesheet">
     
-    <!-- HTML5 Shim and Respond.js') }} IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js') }} doesn't work if you view the page via file:// -->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
-		<link href='{{ URL::asset('assets/css/animations-ie-fix.css') }}' rel='stylesheet'>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js') }}"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.{{ URL::asset('assets/js/1.4.2/respond.min.js') }}"></script>
+		<link href='http://phucankhangland.com/assets/css/animations-ie-fix.css' rel='stylesheet'>
+		<script src="http://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="http://oss.maxcdn.com/libs/respond.http://phucankhangland.com/assets/js/1.4.2/respond.min.js"></script>
 	<![endif]-->
 </head>
 <body>
@@ -102,19 +103,19 @@
 	<!-- RETURN TO TOP -->
 
 	<!-- ===== JS ===== -->
-	<script src="{{ URL::asset('assets/js/jquery.min.js') }}"></script>
+	<script src="http://phucankhangland.com/assets/js/jquery.min.js"></script>
 	<!-- JS Bootstrap -->
-	<script src="{{ URL::asset('assets/vendor/bootstrap/bootstrap.min.js') }}"></script>
+	<script src="http://phucankhangland.com/assets/vendor/bootstrap/bootstrap.min.js"></script>
 	<!-- ===== JS Bxslider ===== -->
-	<script src="{{ URL::asset('assets/vendor/bxslider/jquery.bxslider.min.js') }}"></script>
+	<script src="http://phucankhangland.com/assets/vendor/bxslider/jquery.bxslider.min.js"></script>
 	<!-- ===== JS Bxslider ===== -->
-	<script src="{{ URL::asset('assets/vendor/owl-carousel/owl.carousel.min.js') }}"></script>
+	<script src="http://phucankhangland.com/assets/vendor/owl-carousel/owl.carousel.min.js"></script>
 	<!-- JS Sticky -->
-	<script src="{{ URL::asset('assets/vendor/sticky/jquery.sticky.js') }}"></script>
+	<script src="http://phucankhangland.com/assets/vendor/sticky/jquery.sticky.js"></script>
 	<!-- ===== JS Bootstrap Select ===== -->
-	<script src="{{ URL::asset('assets/vendor/bootstrap-select/js/bootstrap-select.min.js') }}"></script>
+	<script src="http://phucankhangland.com/assets/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
 	<!-- Js Common -->
-	<script src="{{ URL::asset('assets/js/common.js') }}"></script>
+	<script src="http://phucankhangland.com/assets/js/common.js"></script>
 	@yield('javascript_page')
 	<script type="text/javascript">
 		$(document).ready(function(){
